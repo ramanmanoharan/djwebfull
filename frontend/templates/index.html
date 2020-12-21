@@ -1,0 +1,408 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block body %}
+    <!-- Start Preload -->
+   
+  
+    <!-- End Navbar -->
+
+    <!-- Start Content -->
+    <div id="halvor">
+{% for cont in Homemessage %} 
+        <!-- Start Header -->
+        <section class="header luxy-el" data-horizontal="1" data-speed-y="10" style="background-image: url(images/{{ MEDIA_ROOT }}{{ cont.image }})" id="no-ring">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-md-6 col-12 text-md-left text-center mt-30">
+
+                        <!-- head-title -->
+                        <div class="head-text">
+                            <h2>{{cont.title}}</h2>
+                            <div class="mt-10"></div>
+                            <p style="z-index:900;font-weight: bold">{{cont.description}}</p>
+                        </div>
+
+
+                        <div class="button_su mt-10">
+                            <span class="su_button_circle">
+                            </span>
+                            <a href="{% url 'contact' %}" class="button_su_inner">
+                                <span class="button_text_container">
+                                    {{cont.button}}
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    
+
+                    <div class="col-md-1 offset-md-5 text-right">
+                        <!-- social media header -->
+                        <div class="sosmed">
+                            <ul>
+                                <li>
+                                    <div class="button_su_social">
+                                        <span class="su_button_circle_social">
+                                        </span>
+                                        <a href="#" class="button_su_inner_social">
+                                            <span class="button_text_container_social">
+                                                <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="button_su_social">
+                                        <span class="su_button_circle_social">
+                                        </span>
+                                        <a href="#" class="button_su_inner_social">
+                                            <span class="button_text_container_social">
+                                                <i class="fab fa-instagram" aria-hidden="true"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="button_su_social">
+                                        <span class="su_button_circle_social">
+                                        </span>
+                                        <a href="#" class="button_su_inner_social">
+                                            <span class="button_text_container_social">
+                                                <i class="fab fa-twitter" aria-hidden="true"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="button_su_social">
+                                        <span class="su_button_circle_social">
+                                        </span>
+                                        <a href="#" class="button_su_inner_social">
+                                            <span class="button_text_container_social">
+                                                <i class="fab fa-youtube" aria-hidden="true"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+       
+                </div>
+                <div id="headmove" class="lines">
+                    <div data-depth="0.2" class="img-line">
+                        <img src="{% static 'assets/img/lines.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endfor %}
+        <!-- End Header -->
+
+        <!-- Start Work -->
+        <section class="work between">
+                <div class="mouse-down page"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="title-main">
+                            <h2>Work</h2>
+                            <p>We Works for Your Business Growth.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-4 text-right">
+                        <div class="button_su_border mt-10">
+                            <span class="su_button_circle_border">
+                            </span>
+                            <a href="{% url 'work' %}" class="button_su_inner_border">
+                                <span class="button_text_container_border">
+                                    SEE ALL
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="work-slider">
+                    <div class="owl-carousel owl-theme">
+                        {% for ourwork in Work %} 
+                        <!-- work item -->
+                        <div class="work-item">
+                            <a class="load-halvor" href="#">
+                                <div class="work-text">
+                                    <h3>{{ourwork.title}}</h3>
+                                    <p>{{ourwork.shorttitle}}</p>
+                                    <span>Posted By {{ourwork.postedby}}</span>
+                                </div>
+                                <div class="border-work"></div>
+                                <div class="img-item">
+                   <img style="background: linear-gradient(120deg, rgba(2,0,36,1) 0%, rgba(228,51,60,1) 35%, rgba(0,212,255,1) 100%);" src="images/{{ MEDIA_ROOT }}{{ ourwork.image }}" class="img-fluid" alt="">
+                                </div>
+                            </a>
+                        </div>
+                        {% endfor %}
+                        <!-- work item -->
+                       
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Work -->
+
+        <!-- Start Service -->
+        <section class="service between">
+            <div id="headmove-2" class="lines">
+                <div data-depth="0.2" class="img-line">
+                    <img src="{% static 'assets/img/lines.png' %} " alt="">
+                </div>
+
+            </div>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-8">
+                        <div class="title-main">
+                            <h2>Service</h2>
+                            <p>Tell us your goals.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-4 text-right">
+                        <div class="button_su_border mt-10">
+                            <span class="su_button_circle_border">
+                            </span>
+                            <a href="service.html" class="button_su_inner_border load-halvor">
+                                <span class="button_text_container_border">
+                                    SEE ALL
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="service-item">
+                            <div class="service-text">
+                                <h3>Web Design</h3>
+                                <p>Interactive browser software for constant communication</p>
+                            </div>
+                            <div class="service-icon">
+                                <img src="{% static 'assets/img/service/1.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-item">
+                            <div class="service-text">
+                                <h3>Web Development</h3>
+                                <p>Interactive browser software for constant communication</p>
+                            </div>
+                            <div class="service-icon">
+                                <img src="{% static 'assets/img/service/2.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-item">
+                            <div class="service-text">
+                                <h3>Graphic Design</h3>
+                                <p>Interactive browser software for constant communication</p>
+                            </div>
+                            <div class="service-icon">
+                                <img src="{% static 'assets/img/service/3.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-item">
+                            <div class="service-text">
+                                <h3>Branding</h3>
+                                <p>Interactive browser software for constant communication</p>
+                            </div>
+                            <div class="service-icon">
+                                <img src="{% static 'assets/img/service/4.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-item">
+                            <div class="service-text">
+                                <h3>Photography</h3>
+                                <p>Interactive browser software for constant communication</p>
+                            </div>
+                            <div class="service-icon">
+                                <img src="{% static 'assets/img/service/5.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-item">
+                            <div class="service-text">
+                                <h3>Social Media</h3>
+                                <p>Interactive browser software for constant communication</p>
+                            </div>
+                            <div class="service-icon">
+                                <img src="{% static 'assets/img/service/6.png' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Service -->
+        {% for About in Whoare %}
+        <!-- Start About -->
+        <section class="about between">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="title-main">
+                            <h2>{{About.title}}</h2>
+                            <p>{{About.shorttitle}}.</p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="row centered">
+                    <div class="col-md-7 mt-30">
+                        <div class="img-about">
+                            <img style="background: linear-gradient(120deg, rgba(2,0,36,1) 0%, rgba(228,51,60,1) 35%, rgba(0,212,255,1) 100%);" src="/images/{{ MEDIA_ROOT }}{{ About.image }}" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="about-text mt-30">
+                            <h2>We believe in forward thinking design.</h2>
+                            <p>{{About.message}}</p>
+                            <div class="mt-30"></div>
+                            <div class="button_su_border">
+                                <span class="su_button_circle_border">
+                                </span>
+                                <a href="{% url 'about' %}" class="button_su_inner_border load-halvor">
+                                    <span class="button_text_container_border">
+                                        MORE ABOUT US
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2 col-6">
+                        <div class="partner-img">
+                            <img class="img-fluid" src="{% static 'assets/img/partner/client-1.png' %}" alt="">
+                        </div>
+                    </div>
+
+                    <div class="col-md-2 col-6">
+                        <div class="partner-img">
+                            <img class="img-fluid" src="assets/img/partner/client-2.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-6">
+                        <div class="partner-img">
+                            <img class="img-fluid" src="{% static 'assets/img/partner/client-3.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-6">
+                        <div class="partner-img">
+                            <img class="img-fluid" src="{% static 'assets/img/partner/client-4.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-6">
+                        <div class="partner-img">
+                            <img class="img-fluid" src="{% static 'assets/img/partner/client-5.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-6">
+                        <div class="partner-img">
+                            <img class="img-fluid" src="{% static 'assets/img/partner/client-6.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endfor %}
+        <!-- End About -->
+
+        <!-- Start News -->
+        <section class="news between">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="title-main">
+                            <h2>News</h2>
+                            <p>Find out everything.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-4 text-right">
+                        <div class="button_su_border mt-10">
+                            <span class="su_button_circle_border">
+                            </span>
+                            <a href="{% url 'blog' %}" class="button_su_inner_border load-halvor">
+                                <span class="button_text_container_border">
+                                    SEE ALL
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="news-slider">
+                    <div class="mt-30"></div>
+                    <div class="owl-carousel owl-theme">
+                        {% for InBlog in Blog %}
+                        <div class="news-item">
+                            <div class="bg-hover"></div>
+                            <a class="load-halvor" href="/blogdetails/{{ InBlog.id }}">
+                                <div class="news-text">
+                                    <p>{{InBlog.shorttitle}}</p>
+                                    <h3>{{InBlog.title}}</h3>
+                                    <img  src="/images/{{ MEDIA_ROOT }}{{ InBlog.image }}" class="img-fluid" alt="">
+
+                                </div>
+                                <div class="img-item">
+                                   <img style="background: linear-gradient(120deg, rgba(2,0,36,1) 0%, rgba(228,51,60,1) 35%, rgba(0,212,255,1) 100%);" src="/images/{{ MEDIA_ROOT }}{{ InBlog.image }}" class="img-fluid" alt="">
+
+                                </div>
+                            </a>
+                        </div>
+                       {% endfor %}
+
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End News -->
+ <script src="{% static '/assets/js/three.min.js' %}"></script>
+<script src="{% static '/assets/js/vanta.rings.min.js' %}"></script>
+<script>
+VANTA.RINGS({
+  el: "#ring",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  backgroundAlpha: 0.00
+})
+</script>
+        <!-- Start Footer -->
+{% endblock body %}

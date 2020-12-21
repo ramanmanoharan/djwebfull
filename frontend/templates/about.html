@@ -1,0 +1,83 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block body %}
+    <!-- End Navbar -->
+
+    <!-- Start Content -->
+    <div id="halvor">
+
+        <!-- Start Header -->
+         {% for Aboutus in About %}
+        <section class="header-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-12 text-md-left text-center mt-30">
+
+                        <!-- head-title -->
+                        <div class="head-text">
+                            <h2>{{Aboutus.title}}</h2>
+                            <div class="mt-10"></div>
+                            <p>{{Aboutus.description}}</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="headmove" class="lines-page">
+                    <div data-depth="0.2" class="img-line">
+                        <img src="{% static 'assets/img/lines.png' %}" alt="">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- End Header -->
+
+        <section class="main-about between">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="img-page-about">
+                            
+                            <img style="background: linear-gradient(120deg, rgba(2,0,36,1) 0%, rgba(228,51,60,1) 35%, rgba(0,212,255,1) 100%);" src="/images/{{ MEDIA_ROOT }}{{ Aboutus.image }}" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="img-page-about">
+                            <img style="background: linear-gradient(120deg, rgba(2,0,36,1) 0%, rgba(228,51,60,1) 35%, rgba(0,212,255,1) 100%);" src="/images/{{ MEDIA_ROOT }}{{ Aboutus.shortimage }}" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="about-page-text">
+                            <h3>Who we are</h3>
+                            <p>We’ve pushed ourselves to deliver the most forward-thinking digital experiences for our
+                                clients. We fundamentally believe in supporting our people to create the future. More
+                                than any process or tool.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="about-page-text">
+                            <h3>How we work</h3>
+                            <p>We know the elements that influence the perception of a brand by potential customers. We
+                                can effectively promote your company so that it would stand out from your competitors.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="about-page-text">
+                            <h3>Our Vision</h3>
+                            <p>We advise our customers when they can’t find a perfect solution. We prompt when they lack
+                                unconventional ideas. We create and implement projects that are doomed to success..</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endfor %}
+       
+
+        <!-- Start Footer -->
+
+{% endblock body %}

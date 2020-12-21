@@ -1,0 +1,127 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block body %}    <!-- End Navbar -->
+
+    <!-- Start Content -->
+    <div id="halvor">
+
+        <!-- Start Header -->
+        <section class="header-detail-work luxy-el" data-horizontal="1" data-speed-y="10">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <!-- head-title -->
+                        <div class="head-text">
+                            <h2>KENDO</h2>                          
+                        </div>
+                    </div>
+                </div>
+              
+                <!-- main background-->
+                <div class="work-detail bg-work-1"></div>
+                <div id="headmove" class="lines">
+                        <div data-depth="0.2" class="img-line">
+                            <img src="{% static 'assets/img/lines.png' %}" alt="">
+                        </div>
+                    </div>
+            </div>
+        </section>
+        <!-- End Header -->
+
+        <!-- Start Content -->
+        <section class="work-page between">
+                <div class="mouse-down page"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-6 text-md-left text-center">
+                        <div class="work-desc-text">
+                            <h3>Client</h3>
+                            <p>Jakarta, Indonesia</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-6 text-md-left text-center">
+                        <div class="work-desc-text">
+                            <h3>Year</h3>
+                            <p>2019</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-6 text-md-left text-center">
+                        <div class="work-desc-text">
+                            <h3>Role</h3>
+                            <p>Photography</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-6 text-md-left text-center">
+                        <div class="work-desc-text">
+                            <h3>Website</h3>
+                           <a href="#"><p>kendo.com</p></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="img-work-detail">
+                            <img class="img-fluid" src="{% static 'assets/img/work-detail/2.jpg' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="img-work-detail">
+                            <img class="img-fluid" src="{% static 'assets/img/work-detail/3.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                  
+                        <div class="col-md-8 offset-md-2">
+                            <div class="work-detail-text text-center">
+                                <h3>a complete website for the kendo</h3>
+                                <p>e alliance of the beer passion of the Microbrasserie À la Fût and our passion for the Web has allowed us to create a digital work of art that reflects the western atmosphere of the company. We have increased our efforts to increase the Wow effect of the site by using the latest technologies. Every little detail has been reflected. The integration of the UX motion and several photos and videos energizes the entire platform and enhances the products. Developed with the WordPress CMS, the microbrewery team can edit content and easily integrate their new products. Optimized for all platforms, an online commerce module has been added to allow the sale of products online.</p>
+    
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <div class="detail-slider">
+                            <div class="owl-carousel owl-theme">
+                                <div class="detail-item">
+                                    <div class="img-work-detail">
+                                        <img src="{% static 'assets/img/work-detail/2.jpg' %}" alt="">
+                                    </div>
+
+                                </div>
+                                <div class="detail-item">
+                                    <div class="img-work-detail">
+                                        <img src="{% static 'assets/img/work-detail/3.jpg' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="img-work-detail">
+                                        <img src="{% static 'assets/img/work-detail/4.jpg' %}" alt="">
+                                    </div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="img-work-detail">
+                                        <img src="{% static 'assets/img/work-detail/5.jpg' %}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- End Content -->
+
+        <!-- Start Footer -->
+      {% endblock body %}

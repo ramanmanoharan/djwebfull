@@ -1,0 +1,70 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block body %}
+    <!-- End Navbar -->
+
+    <!-- Start Content -->
+    <div id="halvor">
+
+        <!-- Start Header -->
+        <section class="header-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-12 text-md-left text-center mt-30">
+
+                        <!-- head-title -->
+                        <div class="head-text">
+                            <h2>EXPLORE OUR RECENT NEWS</h2>
+                            <div class="mt-10"></div>
+                            <p>We’ve pushed ourselves to deliver the most forward-thinking digital experiences for our
+                                clients. We fundamentally believe in supporting our people to create the future. More
+                                than
+                                any process or tool.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="headmove" class="lines-page">
+                    <div data-depth="0.2" class="img-line">
+                        <img src="{% static 'assets/img/lines.png' %}" alt="">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- End Header -->
+
+        <section class="main-blog between">
+            <div class="container">
+                <div class="row">
+                    {% for InBlog in Blog %}
+                    <!-- news item -->
+                    <div class="col-md-4">
+                        <div class="news-item">
+                            <div class="bg-hover"></div>
+                            <a class="load-halvor" href="/blogdetails/{{ InBlog.id }}">
+                                <div class="news-text">
+                                    <p>{{InBlog.shorttitle}}</p>
+                                    <h3>{{InBlog.title}}</h3>
+                                    <img  src="/images/{{ MEDIA_ROOT }}{{ InBlog.image }}" class="img-fluid" alt="">
+
+                                </div>
+                                <div class="img-item">
+                                   <img style="background: linear-gradient(120deg, rgba(2,0,36,1) 0%, rgba(228,51,60,1) 35%, rgba(0,212,255,1) 100%);" src="/images/{{ MEDIA_ROOT }}{{ InBlog.image }}" class="img-fluid" alt="">
+
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- news item -->
+                   
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Start Footer -->
+
+{% endblock body %}

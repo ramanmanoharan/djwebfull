@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% for data in Metadat %} 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{data.title}}</title>
+    <meta name="keyword" content="{{data.keyword}}" />
+    <meta name="description" content="{{data.description}}">
+
+    <link rel="stylesheet" href="{% static 'assets/css/plugin.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome/css/all.css' %}">
+    
+</head>
+
+<body>
+      <div class="block-1"></div>
+    <div class="block-2"></div>
+    <div class="logo-load">
+        <img src="/images/{{data.logo}}" alt="">
+    </div>
+    <div class="logo-load spinning"></div>
+    <div class="over-all"></div>
+    <!-- End Preload -->
+
+    <!-- Start Navbar -->
+    </div>
+     <div class="preloader">
+    </div>
+    <nav>
+
+        <div class="container">
+            <div class="navbars">
+
+                <!-- logo -->
+                <div class="logo">
+                    <a class="load-halvor" href="{% url 'index' %}">
+                        <img src="/images/{{data.logo}}" alt="">
+                    </a>
+
+                </div>
+
+                <!-- navbar link -->
+                <ul class="links">
+                    <li class="normal-link active"><a class="load-halvor" data-link='HOME'
+                            href="{% url 'index' %}">HOME</a></li>
+                    <li class="normal-link"><a class="load-halvor" data-link='WORK' href="{% url 'work' %}">WORK</a></li>
+                    <li class="normal-link"><a class="load-halvor" data-link='ABOUT' href="{% url 'about' %}">ABOUT</a></li>
+                    <li class="normal-link"><a class="load-halvor" data-link='SERVICES' href="{% url 'service' %}">SERVICES</a>
+                    </li>
+                    <li class="normal-link"><a class="load-halvor" data-link='BLOG' href="{% url 'blog' %}">BLOG</a></li>
+
+                    <li>
+                        <div class="button_su">
+                            <span class="su_button_circle">
+                            </span>
+                            <a  href="{% url 'contact' %}" class="button_su_inner load-halvor">
+                                <span class="button_text_container">
+                                    CONTACT US
+                                </span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- mobile menu -->
+                <div class="toggle">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+
+
+            </div>
+        </div>
+    </nav>
+    {% endfor %}
+{% block body %}
+
+  
+{% endblock body %}
+{% for msg in Foot %} 
+<footer id="ram" style="background-image: url(images/{{ MEDIA_ROOT }}{{ msg.background }})">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-md-10 offset-md-1 text-center">
+                        <div class="to-touch">
+                            <div class="bg-footer" id="headmove-3">
+                                <div data-depth="0.2" class="img-line">
+                                    <img src="{% static 'assets/img/lines.png' %}" alt="">
+                                </div>
+                            </div>
+                            <h2>{{msg.title}}</h2>
+                            <p>{{msg.shorttitle}}</p>
+                            <div class="button_su mt-10">
+                                <span class="su_button_circle">
+                                </span>
+                                <a href="{% url 'contact' %}" class="button_su_inner load-halvor">
+                                    <span class="button_text_container">
+                                        GET STARTED
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="col-md-12 text-center mt-40">
+                        <div class="nav-footer">
+                            <ul>
+                                <li><a href="{% url 'index' %}">HOME</a></li>
+                                <li><a href="{% url 'work' %}">WORK</a></li>
+                                <li><a href="{% url 'about' %}">ABOUT</a></li>
+                                <li><a href="{% url 'service' %}">SERVICES</a></li>
+                                <li><a href="{% url 'blog' %}">BLOG</a></li>
+                                <li><a href="{% url 'contact' %}">CONTACT</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 text-center text-md-right mt-30">
+                        <div class="copy">
+                            <p>{{msg.copyright}}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 text-center text-md-left mt-30">
+                        <div class="social-footer">
+                            <ul>
+                                <li><a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-youtube" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+         {% endfor %}
+        <!-- End Footer -->
+    
+    <!-- End Content -->
+
+    <script src="{% static '/assets/js/plugin.js' %}"></script>
+    <script src="{% static '/assets/js/main.js' %}"></script>
+    <script src="{% static 'assets/js/three.min.js' %}"></script>
+<script src="{% static 'assets/js/vanta.birds.min.js' %}"></script>
+<script>
+VANTA.BIRDS({
+  el: "#ram",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  birdSize: 0.50,
+  backgroundAlpha: 0.00
+})
+</script>
+ <script src="{% static 'assets/js/three.min.js' %}"></script>
+<script src="{% static 'vanta.rings.min.js' %}"></script>
+<script>
+VANTA.RINGS({
+  el: "#your-element-selector",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  backgroundAlpha: 0.00
+})
+</script>
+</body>
+
+</html>
